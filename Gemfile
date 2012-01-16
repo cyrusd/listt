@@ -32,6 +32,7 @@ gem 'jquery-rails'
 
 gem 'json'
 gem 'oauth'
+gem 'haml'
 
 group :test do
   # Pretty printed test output
