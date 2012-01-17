@@ -1,0 +1,2 @@
+class AccumulatorList < List
+end

@@ -1,0 +1,2 @@
+class OrderedListItem < ListItem
+end

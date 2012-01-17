@@ -1,0 +1,2 @@
+class UnorderedListItem < ListItem
+end

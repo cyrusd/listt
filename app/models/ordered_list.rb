@@ -1,0 +1,2 @@
+class OrderedList < List
+end
