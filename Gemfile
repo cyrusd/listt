@@ -11,7 +11,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
 gem 'json'
 gem 'omniauth', '~> 0.3.2'
 gem 'haml'
