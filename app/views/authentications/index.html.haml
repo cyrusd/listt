@@ -1,7 +1,10 @@
-- if user_signed_in?
-  You are signed in.
-- else
-  Sign in with 
-  %a{:href => "/auth/twitter"}
-    = image_tag "twitter_64.png"
-    Twitter
+.grid_16{:style => "text-align: center"}
+  - if user_signed_in?
+    You are signed in as #{current_user.email}!
+  - else
+    .sign_in_text{:style => "font-size: 32px; margin-top: 2em;"}
+      Use yor Twitter account to sign into Lis.tt!
+      %a{:href => "/auth/twitter"}
+        #sign_in_image{:style => "margin-top: 2em;"}
+          = image_tag "twitter_128.png"
+        Sign in!

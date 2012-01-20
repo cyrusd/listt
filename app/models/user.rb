@@ -19,4 +19,8 @@ class User < ActiveRecord::Base
   def password_required?
     (authentications.empty? || !password.blank?) && super
   end
+
+  def can_view? (list)
+    list.user == self || list.visibility == List::Visibility::PUBLIC || permitted_lists.include?(list)
+  end
 end
