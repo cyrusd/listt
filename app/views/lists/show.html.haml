@@ -1,0 +1,11 @@
+#list_title{:style => "font-size: 24px"}
+  %strong
+    Title: 
+  = @list.title
+#list_created_by{:style => "font-size: 18px"}
+  %strong
+    Created by:
+  = @list.user.email
+#list_items_count{:style => "font-size: 18px"}
+  = pluralize @list.list_items.count, "item"
+= render @list.type.downcase

@@ -2,6 +2,7 @@ class List < ActiveRecord::Base
   acts_as_audited
   belongs_to :user
   has_many :list_items, :before_add => :check_list_item_type
+  validates_presence_of :title
 
   def self.inherited(child)
     child.instance_eval do
