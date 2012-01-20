@@ -3,7 +3,7 @@
   %head
     %title
       Lis.tt - the social list tool
-    = stylesheet_link_tag "application", "http://fonts.googleapis.com/css?family=Mrs+Sheppards"
+    = stylesheet_link_tag "application", "http://fonts.googleapis.com/css?family=Mrs+Sheppards", "http://fonts.googleapis.com/css?family=Lusitana"
     = javascript_include_tag "application"
     = csrf_meta_tags
 
@@ -36,7 +36,8 @@
     .container_16#content
       .grid_16
         #banner
-          Lis.tt
+          %a{:href => "/"}
+            Lis.tt
       .grid_16#content_margin
         &nbsp;
       = yield
