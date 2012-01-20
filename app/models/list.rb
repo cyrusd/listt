@@ -30,11 +30,19 @@ class List < ActiveRecord::Base
   end
 
   def viewable_by? (user)
-    self.user == user || visibility == List::Visibility::PUBLIC || visibility == List::Visibility::PROTECTED || permitted_users.include?(user) 
+    if user.nil?
+      visibility == List::Visibility::PUBLIC || visibility == List::Visibility::PROTECTED
+    else
+      self.user == user || visibility == List::Visibility::PUBLIC || visibility == List::Visibility::PROTECTED || permitted_users.include?(user) 
+    end
   end
 
   def editable_by? (user)
-    self.user == user || visibility == List::Visibility::PUBLIC || permitted_users.include?(user)
+    if user.nil?
+      visibility == List::Visibility::PUBLIC
+    else
+      self.user == user || visibility == List::Visibility::PUBLIC || permitted_users.include?(user)
+    end
   end
 
 private

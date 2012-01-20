@@ -8,30 +8,26 @@
     = csrf_meta_tags
 
   %body
+    #flash
+      - if flash[:notice]
+        #flash_notice
+          = flash[:notice]
+          - flash[:notice] = nil
+      - if flash[:alert]
+        #flash_alert
+          = flash[:alert]
+          - flash[:alert] = nil
     .container_16#header
-      .grid_16
-        .grid_6.alpha
-          &nbsp;
-        .grid_4#flash
-          - if flash[:notice]
-            #flash_notice
-              = flash[:notice]
-              - flash[:notice] = nil
-          - if flash[:alert]
-            #flash_alert
-              = flash[:alert]
-              - flash[:alert] = nil
-          &nbsp;
-        .grid_6.omega#sign_in_status
-          - if user_signed_in?
-            Signed in as 
-            %b
-              #{current_user.email}.
-            Not you?
-            = link_to "Sign out", destroy_user_session_path, :method => :delete
-          - else
-            Not signed in.
-            = link_to "Sign in", authentications_path
+      .grid_16#sign_in_status
+        - if user_signed_in?
+          Signed in as 
+          %b
+            #{current_user.email}.
+          Not you?
+          = link_to "Sign out", destroy_user_session_path, :method => :delete
+        - else
+          Not signed in.
+          = link_to "Sign in", authentications_path
 
     .container_16#content
       .grid_16
