@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
   has_many :authentications
+  has_many :lists
+  has_many :permissions
+  has_many :permitted_lists, :through => :permissions, :source => :list
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
