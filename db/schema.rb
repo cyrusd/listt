@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120120003829) do
+ActiveRecord::Schema.define(:version => 20120120032842) do
 
   create_table "accumulator_list_items", :force => true do |t|
     t.datetime "created_at"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20120120003829) do
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "visibility"
   end
 
   create_table "ordered_list_items", :force => true do |t|
@@ -77,6 +78,14 @@ ActiveRecord::Schema.define(:version => 20120120003829) do
   end
 
   create_table "ordered_lists", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "permissions", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "list_id"
+    t.string   "permission_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
