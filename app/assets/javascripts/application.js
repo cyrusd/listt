@@ -7,3 +7,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function () {
+  setTimeout(function () {$("#flash_notice").fadeOut()}, 2500);
+  setTimeout(function () {$("#flash_alert").fadeOut()}, 2500);
+});

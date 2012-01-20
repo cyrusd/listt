@@ -2,37 +2,43 @@
 %html
   %head
     %title
-      lis.tt
+      Lis.tt - the social list tool
     = stylesheet_link_tag "application", "http://fonts.googleapis.com/css?family=Mrs+Sheppards"
     = javascript_include_tag "application"
     = csrf_meta_tags
+
   %body{:style => "background: #e1edf0;"}
-    .container_16#header
-      .grid_16{:style => "text-align: right; margin-top: 2em; color: #787878"}
-        - if user_signed_in?
-          Signed in as 
-          %b
-            #{current_user.email}.
-          Not you?
-          = link_to "Sign out", destroy_user_session_path, :method => :delete
-        - else
-          Not signed in.
-          = link_to "Sign in", new_user_session_path
+    .container_16#header{:style => "height: 3em;"}
+      .grid_16
+        .grid_6.alpha
+          &nbsp;
+        .grid_4#flash{:style => "text-align: center; font-size: 16px; margin-top: 1.4em"}
+          - if flash[:notice]
+            #flash_notice{:style => "background-color: #e9fce2; border: 2px solid #62a449; -moz-border-radius: 4px; border-radius: 4px;"}
+              = flash[:notice]
+          - if flash[:alert]
+            #flash_alert{:style => "background-color: #f8e5e4; border: 2px solid #a14e4a; -moz-border-radius: 4px; border-radius: 4px;"}
+              = flash[:alert]
+          &nbsp;
+        .grid_6.omega{:style => "text-align: right; margin-top: 2em; color: #787878"}
+          - if user_signed_in?
+            Signed in as 
+            %b
+              #{current_user.email}.
+            Not you?
+            = link_to "Sign out", destroy_user_session_path, :method => :delete
+          - else
+            Not signed in.
+            = link_to "Sign in", authentications_path
+
     .container_16#content{:style => "background: #fafafa; height: 1024px; margin-top: 2.5em; border: 4px solid #94b5c2; -moz-border-radius: 8px; border-radius: 8px; "}
       .grid_16
         #banner{:style => "text-align: right; font-family: 'Mrs Sheppards', serif; font-size: 56px; padding-right: 1em;"}
           Lis.tt
       .grid_16{:style => "border-top: 2px solid #000000;"}
-        .grid_10.alpha
-          &nbsp;
-        .grid_6.omega#flash{:style => "text-align: center; font-size: 16px"}
-          - if flash[:notice]
-            #flash_notice{:style => "background-color: #e9fce2; border-bottom: 2px solid #62a449; border-right: 2px solid #62a449; border-left: 2px solid #62a449; -moz-border-radius-bottomright: 4px; -moz-border-radius-bottomleft: 4px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;"}
-              = flash[:notice]
-          - if flash[:error]
-            #flash_error{:style => "background-color: #f8e5e4; border-bottom: 2px solid #a14e4a; border-right: 2px solid #a14e4a; border-left: 2px solid #a14e4a; -moz-border-radius-bottomright: 4px; -moz-border-radius-bottomleft: 4px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;"}
-              = flash[:warning]
+        &nbsp;
       = yield
+
     .container_16#footer{:style => "margin-top: 2.5em;"}
       .grid_16{:style => "margin-bottom: 2em;"}
         .grid_2.alpha
