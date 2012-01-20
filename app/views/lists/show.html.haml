@@ -1,11 +1,15 @@
-#list_title{:style => "font-size: 24px"}
-  %strong
-    Title: 
-  = @list.title
-#list_created_by{:style => "font-size: 18px"}
-  %strong
-    Created by:
-  = @list.user.email
-#list_items_count{:style => "font-size: 18px"}
+.grid_16
+  .grid_2.alpha#list_title{:style => "font-size: 24px"}
+    %strong
+      Title: 
+  .grid_14.omega{:style => "font-size: 24px"}
+    = @list.title
+  .grid_2.alpha#list_created_by{:style => "font-size: 18px"}
+    %strong
+      Created by:
+  .grid_14.omega{:style => "font-size: 18px"}
+    = @list.user.email
+.grid_16#list_items_count{:style => "font-size: 18px"}
   = pluralize @list.list_items.count, "item"
+  = link_to "Add an item", new_list_item_path(:list_id => @list.id)
 = render @list.type.downcase
