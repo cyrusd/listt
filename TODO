@@ -1,0 +1,2 @@
+- move permissions logic from lists controller to views
+  - implement "respond_with"

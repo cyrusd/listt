@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+  respond_to :html, :json
+
   def index
     view = ""
 
