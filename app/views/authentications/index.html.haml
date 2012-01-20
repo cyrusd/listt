@@ -1,0 +1,7 @@
+- if user_signed_in?
+  You are signed in.
+- else
+  Sign in with 
+  %a{:href => "/auth/twitter"}
+    = image_tag "twitter_64.png"
+    Twitter
