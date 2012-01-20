@@ -3,9 +3,9 @@ class ListsController < ApplicationController
 
   def index
     if user_signed_in?
-      @lists = current_user.lists
+      @lists = current_user.lists.order("updated_at DESC")
     else
-      @lists = List.where(:visibility => List::Visibility::PUBLIC)
+      @lists = List.where(:visibility => [List::Visibility::PUBLIC, List::Visibility::PROTECTED]).order("updated_at DESC")
     end
 
     respond_with @lists

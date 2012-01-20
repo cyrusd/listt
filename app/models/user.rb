@@ -21,6 +21,10 @@ class User < ActiveRecord::Base
   end
 
   def can_view? (list)
-    list.user == self || list.visibility == List::Visibility::PUBLIC || permitted_lists.include?(list)
+    list.viewable_by?(self)
+  end
+
+  def can_edit? (list)
+    list.editable_by?(self)
   end
 end

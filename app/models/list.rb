@@ -1,8 +1,8 @@
 class List < ActiveRecord::Base
   class Visibility
-    PUBLIC    = "public"
-    PROTECTED = "protected"
-    PRIVATE   = "private"
+    PUBLIC    = "public"    # all users can read/write
+    PROTECTED = "protected" # all users can read, permitted users can read/write
+    PRIVATE   = "private"   # permitted users can read/write
   end
 
   acts_as_audited
@@ -25,6 +25,17 @@ class List < ActiveRecord::Base
     descendants.map{ |c| c.to_s }.sort
   end
 
+  def as_json(options = {})
+    { type: type }.merge super(options)
+  end
+
+  def viewable_by? (user)
+    self.user == user || visibility == List::Visibility::PUBLIC || visibility == List::Visibility::PROTECTED || permitted_users.include?(user) 
+  end
+
+  def editable_by? (user)
+    self.user == user || visibility == List::Visibility::PUBLIC || permitted_users.include?(user)
+  end
 
 private
 
