@@ -1,6 +1,15 @@
 .grid_16{:style => "text-align: center"}
   - if user_signed_in?
-    You are signed in as #{current_user.email}!
+    Congratulations, you are signed in as #{current_user.email}!
+    %p
+    Why not 
+    %a{:href => "/lists/new"}
+      create a new list
+    , or 
+    %br
+    %a{:href => "/lists"}
+      browse existing lists
+    for inspiration?
   - else
     .sign_in_text{:style => "font-size: 32px; margin-top: 2em;"}
       Use yor Twitter account to sign into Lis.tt!

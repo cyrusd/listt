@@ -69,7 +69,7 @@ body
   border-radius:      8px;
 }
 
-#banner
+#banner_title
 {
   text-align:    right;
   font-family:   'Mrs Sheppards', serif;
@@ -77,28 +77,28 @@ body
   padding-right: 1em;
 }
 
-#banner a:link
+#banner_title a:link
 {
   text-decoration: none;
   font-weight:     normal;
   color:           #000;
 }
 
-#banner a:visited
+#banner_title a:visited
 {
   text-decoration: none;
   font-weight:     normal;
   color:           #000;
 }
 
-#banner a:hover
+#banner_title a:hover
 {
   text-decoration: none;
   font-weight:     normal;
   color:           #000;
 }
 
-#banner a:active
+#banner_title a:active
 {
   text-decoration: none;
   font-weight:     normal;
@@ -115,9 +115,48 @@ body
   margin-top: 2.5em;
 }
 
+.footer_text
+{
+  padding-top:    5px;
+  padding-bottom: 5px;
+  text-align:     center;
+  margin-bottom:  2em;
+  color:          #787878;
+}
+
+.footer_text a
+{
+  text-decoration: none;
+  font-weight:     normal;
+  color:           #787878;
+}
+
+.footer_text a:hover
+{
+  text-decoration: none;
+  font-weight:     normal;
+  color:           #787878;
+}
+
+.footer_text a:visited
+{
+  text-decoration: none;
+  font-weight:     normal;
+  color:           #787878;
+}
+
+.footer_text a:active
+{
+  text-decoration: none;
+  font-weight:     normal;
+  color:           #787878;
+}
+
 .footer_item
 {
-  text-align:    center;
-  color:         #787878;
-  margin-bottom: 2em;
+  padding-top:    5px;
+  padding-bottom: 5px;
+  text-align:     center;
+  margin-bottom:  2em;
+  color:          #787878;
 }
