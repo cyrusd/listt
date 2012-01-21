@@ -1,6 +1,6 @@
 class ListItem < ActiveRecord::Base
   acts_as_audited
-  belongs_to :list
+  belongs_to :list, :touch => true
   belongs_to :user
 
   def self.inherited(child)

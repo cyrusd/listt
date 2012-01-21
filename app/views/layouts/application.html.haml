@@ -44,6 +44,7 @@
           - if user_signed_in?
             .button#add_list_button{:onclick => "document.location = '/lists/new'"}
               create list
+          %input{:type => "text", :value => "Search"}
       .grid_16#content_margin
         &nbsp;
       = yield
