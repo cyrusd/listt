@@ -12,9 +12,8 @@ $(document).ready(function () {
   $(".button").button();
   $("#add_list_button").button("option", "icons", {primary: "ui-icon-plusthick"});
 
-  $(".footer_item").hover(function () { $(this).css("background", "#dadada").css("color: #212121");}, function () { $(this).css("background", "#e1edf0").css("color", "#787878");});
+  $(".footer_item").hover(function () { $(this).css("background", "#dadada").css("color", "#212121").css("border", "1px solid #dadada");}, function () { $(this).css("background", "#e1edf0").css("color", "#787878").css("border", "1px solid #e1edf0");});
   $(".footer_item").click(function () { document.location = "/" + jQuery.trim($(this).text().toLowerCase()); });
 
-  setTimeout(function () {$("#flash_notice").fadeOut()}, 2500);
-  setTimeout(function () {$("#flash_alert").fadeOut()}, 2500);
+  setTimeout(function () {$("#flash").fadeOut()}, 2500);
 });

@@ -17,6 +17,9 @@
         #flash_alert
           = flash[:alert]
           - flash[:alert] = nil
+      - content_for :page_script do
+        :javascript
+          $("#flash").fadeIn();
     .container_16#header
       .grid_16
         .grid_4.alpha
@@ -37,7 +40,7 @@
 
     .container_16#content
       .grid_16
-        #banner_buttons{:style => "float: left; margin-bottom: .5em;"}
+        #banner_buttons
           - if user_signed_in?
             .button#add_list_button{:onclick => "document.location = '/lists/new'"}
               create list
@@ -67,7 +70,8 @@
           &nbsp;
         .grid_2.footer_text
           &copy; 2012, 
-          %a{:href => "https://twitter.com/cyrusd"}
+          %a{:href => "https://twitter.com/cyrusd", :target => "#"}
             @cyrusd
         .grid_1.omega
           &nbsp;
+    = yield :page_script

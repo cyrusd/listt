@@ -18,8 +18,9 @@ body
 
 #flash
 {
+  display:    none;
   position:   fixed;
-  top:        5px;
+  top:        2px;
   left:       0;
   right:      0;
   z-index:    50;
@@ -53,7 +54,7 @@ body
 #sign_in_status
 {
   text-align: right;
-  margin-top: 2em;
+  margin-top: 3.5em;
   color:      #787878;
 }
 
@@ -154,9 +155,23 @@ body
 
 .footer_item
 {
-  padding-top:    5px;
-  padding-bottom: 5px;
-  text-align:     center;
-  margin-bottom:  2em;
-  color:          #787878;
+  padding-top:        5px;
+  padding-bottom:     5px;
+  text-align:         center;
+  margin-bottom:      2em;
+  color:              #787878;
+  border:             1px solid #e1edf0;
+  border-radius:      4px;
+  -moz-border-radius: 4px;
+}
+
+#banner_buttons
+{
+  float:         left;
+  margin-bottom: .5em;
+}
+
+.ui-button-text
+{
+  font-family: 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
 }

@@ -1,3 +1,24 @@
 // Place all the styles related to the lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.column_title
+{
+  padding-left: 5px;
+  font-weight: bold;
+  font-size: 30px;
+  background-color: #e1edf0;
+  border: 1px solid #94b5c2;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+}
+
+.column_item
+{
+  padding: 5px;
+  border-bottom: 1px solid #aaaaaa;
+  border-left: 1px solid #aaaaaa;
+  border-right: 1px solid #aaaaaa;
+}

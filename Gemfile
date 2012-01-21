@@ -16,7 +16,7 @@ gem 'omniauth', '~> 0.3.2'
 gem 'haml'
 gem "acts_as_audited", "2.0.0"
 gem "devise", ">= 2.0.0.rc"
-gem "cancan"
+gem 'will_paginate'
 
 group :test do
   gem 'turn', :require => false

@@ -8,13 +8,7 @@ class ListsController < ApplicationController
   end
 
   def index
-    @lists = []
-
-    if user_signed_in?
-      @lists = current_user.lists.order("updated_at DESC")
-    else
-      @lists = List.where(:visibility => [List::Visibility::PUBLIC, List::Visibility::PROTECTED]).order("updated_at DESC")
-    end
+    @lists = user_signed_in? ? current_user.lists.order("updated_at DESC").paginate(:page => params[:page]) : List.where(:visibility => [List::Visibility::PUBLIC, List::Visibility::PROTECTED]).order("updated_at DESC").paginate(:page => params[:page])
 
     respond_with @lists
   end

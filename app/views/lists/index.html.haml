@@ -1,10 +1,8 @@
 .grid_16
-  .grid_7.alpha
-    .column_title{:style => "font-weight: bold; font-size: 30px; background-color: #e1edf0; border: 1px solid #94b5c2; border-radius: 4px; margin-bottom: .5em; padding-left: 5px;"}
+  .grid_8.alpha
+    .column_title
       Your lists
-  .grid_2
-    &nbsp;
-  .grid_7.omega
-    .column_title{:style => "font-weight: bold; font-size: 30px; background-color: #e1edf0; border: 1px solid #94b5c2; border-radius: 4px; margin-bottom: .5em; padding-left: 5px;"}
+    = render :partial => "list_8", :collection => @lists, :as => :list
+  .grid_8.omega
+    .column_title
       Popular lists
-= render :partial => "list", :collection => @lists
