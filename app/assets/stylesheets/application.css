@@ -71,10 +71,8 @@ body
 
 #banner_title
 {
-  text-align:    right;
   font-family:   'Mrs Sheppards', serif;
   font-size:     56px;
-  padding-right: 1em;
 }
 
 #banner_title a:link
@@ -107,6 +105,8 @@ body
 
 #content_margin
 {
+  font-size: 18px;
+  height: 1em;
   border-top: 2px solid #000000;
 }
 

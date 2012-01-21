@@ -1,3 +1,10 @@
 .grid_16
-  - @lists.each do |l|
-    = link_to "#{l.title}", l
+  .grid_7.alpha
+    .column_title{:style => "font-weight: bold; font-size: 30px; background-color: #e1edf0; border: 1px solid #94b5c2; border-radius: 4px; margin-bottom: .5em; padding-left: 5px;"}
+      Your lists
+  .grid_2
+    &nbsp;
+  .grid_7.omega
+    .column_title{:style => "font-weight: bold; font-size: 30px; background-color: #e1edf0; border: 1px solid #94b5c2; border-radius: 4px; margin-bottom: .5em; padding-left: 5px;"}
+      Popular lists
+= render :partial => "list", :collection => @lists

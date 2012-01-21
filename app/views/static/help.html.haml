@@ -5,10 +5,16 @@
   %ul{:style => "list-style-type: circle"}
     %li
       Unordered List
+      %div{:style => "font-size: 18px"}
+        An Unordered List is simply a collection of items; lightweight, free-form - like a shopping list or to-do list.
     %li
       Ordered List
+      %div{:style => "font-size: 18px"}
+        An Ordered List is a collection of items in a specific order, such as instructions or a ranked favorites list.
     %li
       Accumulator List
+      %div{:style => "font-size: 18px"}
+        An Accumulator List is a special type of Ordered List; users can increment the "count" for an item on the list; Accumulator Lists are great for collecting votes or ranking songs among friends.
   %p
 .grid_16{:style => "font-size: 30px; font-weight: bold; text-decoration: underline"}
   Privacy
@@ -17,7 +23,25 @@
   %ul{:style => "list-style-type: circle"}
     %li
       Public
+      %div{:style => "font-size: 18px"}
+        Anyone may view or edit a Public list - even users who have never signed in!
     %li
       Protected
+      %div{:style => "font-size: 18px"}
+        Anyone may view a Protected list, but the list creator must specify the users they allow to edit the list.  This is the default list privacy level.
     %li
       Private
+      %div{:style => "font-size: 18px"}
+        By default, no one may view or edit a Private list except the list creator.  The list creator may give other users permissions to view and edit a Private list, however.
+  %p
+.grid_16{:style => "margin-top: 2em; font-size: 30px; font-weight: bold; text-align: center; text-decoration: underline"}
+  The easiest way to learn how to best use Lis.tt is to start using it!
+.grid_14.suffix_1.prefix_1
+  - if user_signed_in?
+    Why not
+    %a{:href => new_list_path} create a list
+    of your own?
+  - else
+    Why not
+    %a{:href => authentications_path} sign in
+    and create a list of your own?
